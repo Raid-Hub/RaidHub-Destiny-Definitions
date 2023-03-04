@@ -43,7 +43,7 @@ async function process(items) {
         .map(([hash, def]) => [hash, {
             name: def.displayProperties.name,
             icon: def.displayProperties.icon,
-            type: def.itemSubType
+            type: def.itemTypeDisplayName ?? "Classified"
         }])
 
     fs.writeFileSync("./lib/emblems.json", JSON.stringify(Object.fromEntries(emblems), null, 2))
